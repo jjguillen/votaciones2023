@@ -7,7 +7,7 @@ async function getVotes(req, res) {
     
     try {
         //const votes = await Vote.find({ completed: false }).sort({ created_at: -1});
-        const votes = await Vote.find({ voted: false }).sort({ ID: 1});
+        const votes = await Vote.find().sort({ ID: 1});
 
 
         if (!votes) {

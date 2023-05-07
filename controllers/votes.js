@@ -7,7 +7,7 @@ async function getVotes(req, res) {
     
     try {
         //const votes = await Vote.find({ completed: false }).sort({ created_at: -1});
-        const votes = await Vote.find({ voted: false }).sort({ id: 1});
+        const votes = await Vote.find({ voted: false }).sort({ ID: 1});
 
 
         if (!votes) {
@@ -31,7 +31,7 @@ async function updateVote(req, res) {
     const bodyJson = req.body;
 
     try {
-        const filter = { id: idVote };
+        const filter = { ID: idVote };
         const update = { voted: true };
 
         let vote = await Vote.findOneAndUpdate(filter, update);

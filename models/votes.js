@@ -4,11 +4,43 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const VoteSchema = Schema({
-    id: {
+    ID: {
         type: Number,
         require: true
     },
-    name: {
+    NOMBRE: {
+        type: String,
+        require: true
+    },
+    APE1: {
+        type: String,
+        require: false
+    },
+    APE2: {
+        type: String,
+        require: false
+    },
+    DOMI1: {
+        type: String,
+        require: false
+    },
+    CPRON: {
+        type: String,
+        require: false
+    },
+    CNMUN: {
+        type: String,
+        require: false
+    },
+    FNAC: {
+        type: String,
+        require: false
+    },
+    IDENT: {
+        type: String,
+        require: false
+    },
+    MESA: {
         type: String,
         require: true
     },

@@ -38,8 +38,9 @@
               let botonVotar = e.target.closest("button[accion=votar]");
               if (botonVotar) {
                       idVotante = document.getElementById("id").value;
+                      mesaVotante = document.getElementById("mesa").value;
                       
-                      const response = await fetch("http://141.94.20.170:3001/api/vote/"+idVotante, { //Fetch hace la petición
+                      const response = await fetch("http://141.94.20.170:3001/api/vote/"+mesaVotante+"/"+idVotante, { //Fetch hace la petición
                           method: 'GET', // *GET, POST, PUT, DELETE, etc.
                       });   
 
@@ -59,7 +60,7 @@
           let cadena = "<br>";
           cadena += '    <form> ' + 
                        ' <div class="form-outline mb-4"> ' +
-                       '   <select class="form-select"> ' +
+                       '   <select class="form-select" id="mesa"> ' +
                        '     <option value="PLAYA-A">PLAYA-A</option>' +
                        '     <option value="PLAYA-B">PLAYA-B</option>' +
                        '     <option value="PLAYA-C">PLAYA-C</option>' +

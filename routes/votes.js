@@ -10,6 +10,6 @@ const api = express.Router();
 api.get("/votes", VoteController.getVotes);
 
 //Guardar que una persona vote
-api.get("/vote/:id", VoteController.updateVote);
+api.get("/vote/:mesa/:id", VoteController.updateVote);
 
 module.exports = api;

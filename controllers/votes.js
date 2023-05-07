@@ -26,12 +26,10 @@ async function getVotes(req, res) {
 async function updateVote(req, res) {
     //Sacar el id de la url del endpoint
     const idVote = req.params.id;
-
-    //Sacar los cambios del voto en el body de la request
-    const bodyJson = req.body;
+    const mesaVote = req.params.mesa;
 
     try {
-        const filter = { ID: idVote };
+        const filter = { ID: idVote, MESA: mesaVote };
         const update = { voted: true };
 
         let vote = await Vote.findOneAndUpdate(filter, update);

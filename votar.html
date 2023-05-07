@@ -58,8 +58,16 @@
         function pintarFormularioVoto() {
           let cadena = "<br>";
           cadena += '    <form> ' + 
- 
                        ' <div class="form-outline mb-4"> ' +
+                       '   <select class="form-select"> ' +
+                       '     <option value="PLAYA-A">PLAYA-A</option>' +
+                       '     <option value="PLAYA-B">PLAYA-B</option>' +
+                       '     <option value="PLAYA-C">PLAYA-C</option>' +
+                       '     <option value="PLAYA-D">PLAYA-D</option>' +
+                       '     <option value="PLAYA-E">PLAYA-E</option>' +
+                       '     <option value="PUEBLO-A">PUEBLO-A</option>' +
+                       '     <option value="PUEBLO-B">PUEBLO-B</option>' +
+                       '   </select>' +
                        '   <input type="text" id="id" class="form-control" placeholder="Número" /> ' +
                        ' </div> ' +
                        ' <button type="button" accion="votar" class="btn btn-primary btn-block mb-4">Registrar</button>' +

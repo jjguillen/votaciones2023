@@ -52,7 +52,7 @@
             'Content-Type': 'application/x-www-form-urlencoded'
           });
 
-          fetch('http://localhost:3001/api/votes/', { headers: myHeaders, method: 'GET' })
+          fetch('http://141.94.20.170:3001/api/votes/', { headers: myHeaders, method: 'GET' })
             .then( res => {
               if (!res.ok) {
                   throw new Error(res.error)

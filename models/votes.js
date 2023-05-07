@@ -16,11 +16,6 @@ const VoteSchema = Schema({
         type: Boolean,
         require: true,
         default: false
-    },
-    created_at: {
-        type: Date,
-        require: true,
-        default: Date.now,
     }
 });
 

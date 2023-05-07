@@ -6,10 +6,10 @@ const api = express.Router();
 //Endpoints ----------------
 
 
-//Consultar todas las tareas
+//Consultar todos los que no han votado
 api.get("/votes", VoteController.getVotes);
 
-//Modificar tarea por id
-api.put("/vote/:id", VoteController.updateVote);
+//Guardar que una persona vote
+api.get("/vote/:id", VoteController.updateVote);
 
 module.exports = api;

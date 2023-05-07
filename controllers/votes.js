@@ -6,7 +6,9 @@ const Vote = require("../models/votes");
 async function getVotes(req, res) {
     
     try {
-        const votes = await Vote.find({ completed: false }).sort({ created_at: -1});
+        //const votes = await Vote.find({ completed: false }).sort({ created_at: -1});
+        const votes = await Vote.find({ voted: false }).sort({ id: 1});
+
 
         if (!votes) {
             res.status(400).send("Error al obtener votos de Mongo");
@@ -29,13 +31,15 @@ async function updateVote(req, res) {
     const bodyJson = req.body;
 
     try {
-        const vote = await Vote.findByIdAndUpdate(idVote, bodyJson);
+        const filter = { id: idVote };
+        const update = { voted: true };
+
+        let vote = await Vote.findOneAndUpdate(filter, update);
 
         if(!vote) {
             res.status(400).send({ msg: "No se ha encontrado esa persona para modificar"});
         } else {
-            res.status(200).send({ msg: "Voto modificado",
-                                    voto: vote });
+            res.status(200).send("Voto " + idVote + " registrado" );
         }
         
     } catch(error) {

@@ -37,7 +37,9 @@
 
         function pintarNoVotados(res) {
           let cadena = "<br>";
-          cadena += "<table class='table table-warning table-hover'>"
+          cadena += "<table class='table table-warning table-hover caption-top'>";
+          cadena += "<caption>No han votado " + res.length + " sobre 3925 personas.</caption>";
+          cadena += "<thead class='table-primary'><tr><th>MESA</th><th>ID</th><th>NOMBRE</th></tr></thead>";
           for (const voto of res) {
             cadena += "<tr><td>" + voto.MESA + "</td><td>" + voto.ID + " </td><td> " + voto.NOMBRE + " " +  voto.APE1 + " " + voto.APE2 + "</td></tr>";          
           }

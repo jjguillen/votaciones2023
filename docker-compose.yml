@@ -1,8 +1,9 @@
 version: "3"
 services:
   nodeapi:
-    image: "node:latest"
     container_name: "nodejs"
+    image: "node:latest"
+    restart: always
     user: "node"
     working_dir: /home/node/app
     environment:
